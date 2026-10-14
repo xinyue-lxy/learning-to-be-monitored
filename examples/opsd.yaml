@@ -1,0 +1,66 @@
+# Illustrative values only. The frozen self-teacher uses the initial student model.
+defaults:
+  - ppo_trainer
+  - _self_
+hydra:
+  searchpath:
+    - pkg://verl.trainer.config
+algorithm:
+  adv_estimator: grpo
+  use_kl_in_reward: false
+critic:
+  enable: false
+data:
+  train_files: ${oc.env:TRAIN_FILE}
+  val_files: ${oc.env:VAL_FILE}
+  train_batch_size: 8
+  max_prompt_length: 1024
+  max_response_length: 2048
+  truncation: error
+  filter_overlong_prompts: false
+  shuffle: false
+actor_rollout_ref:
+  model:
+    path: ${oc.env:MODEL_PATH}
+    use_remove_padding: false
+  actor:
+    ppo_mini_batch_size: 8
+    ppo_micro_batch_size_per_gpu: 1
+    use_kl_loss: false
+    optim:
+      lr: 1.0e-6
+  rollout:
+    name: vllm
+    n: 1
+    tensor_model_parallel_size: 1
+    log_prob_micro_batch_size_per_gpu: 1
+    agent:
+      default_agent_loop: opsd_agent
+      agent_loop_config_path: methods/opsd/agent_loop.yaml
+distillation:
+  enabled: true
+  n_gpus_per_node: 1
+  nnodes: 1
+  colocate_with_actor: false
+  teacher_models:
+    teacher_model:
+      model_path: ${actor_rollout_ref.model.path}
+      privileged_prompt_length: 2048
+      inference:
+        tensor_model_parallel_size: 1
+        max_model_len: 4097
+  distillation_loss:
+    loss_mode: forward_kl_topk
+    topk: 32
+    use_policy_gradient: false
+    use_task_rewards: false
+trainer:
+  n_gpus_per_node: 1
+  nnodes: 1
+  total_epochs: 1
+  logger: [console]
+  project_name: learning-to-be-monitored
+  experiment_name: opsd-example
+  default_local_dir: outputs/opsd
+  resume_mode: disable
+  save_freq: -1

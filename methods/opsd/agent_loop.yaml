@@ -1,0 +1,6 @@
+# Agent registration used by the single OPSD example configuration.
+- name: opsd_agent
+  _target_: methods.opsd.agent_loop.Native12AgentLoop
+  teacher_contrast_power: 1.0
+  teacher_contrast_floor: 0.0
+  privileged_target_weight: 1.0
