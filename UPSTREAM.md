@@ -16,9 +16,25 @@ All inherited source-file copyright and license notices are retained. These
 notices identify third-party upstream contributors, not the submitting authors.
 No private Git history, remotes, account identities, or submission-author
 metadata is included. Added implementation code is distributed under the same
-Apache-2.0 license. Modified inherited files carry a modification notice.
+Apache-2.0 license within the training components. Modified inherited files carry
+a modification notice. This root license does not replace the separate
+MonitorBench MIT notice retained by the evaluation component.
 
 The source revision makes the framework reproducible without exposing private
 commits. To review a framework difference, compare the named file under `verl/`
 with that file at the upstream revision above. No GitHub publication or upstream
 endorsement is implied.
+
+## Evaluation component
+
+`evaluation/` is a separately packaged MonitorBench-derived evaluator. Its code,
+fixed profiles, prompts and bundled benchmark data are integrated without
+changing their evaluation semantics. Attribution, component changes and the
+upstream MIT notice are retained in `evaluation/NOTICE.md`,
+`evaluation/docs/UPSTREAM_CHANGES.md` and `evaluation/LICENSE.upstream`.
+Dataset and model licenses remain separate from code licensing.
+
+The SFT implementation is imported as supplied, without changes to its Python
+files. Repository-level packaging and documentation isolate its environment
+from the distributed framework and evaluator. Training targets and model
+weights are external inputs, not bundled release artifacts.

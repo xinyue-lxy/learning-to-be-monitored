@@ -1,0 +1,236 @@
+{
+  "engine/utils.py": {
+    "source_component": "utils.py",
+    "source_sha256": "e9386d6cf07b4be594bb376f458974a5774e15edd1e0dac5f655f0970b89c710",
+    "packaged_sha256": "e9386d6cf07b4be594bb376f458974a5774e15edd1e0dac5f655f0970b89c710",
+    "modified": false
+  },
+  "engine/pipeline/base.py": {
+    "source_component": "pipeline/base.py",
+    "source_sha256": "f88ca96c6404f06cec1cb52a49330401c047d22945fed0fd673423a61398c293",
+    "packaged_sha256": "65bd95703cbc6b919a2ae32656be7a9badc6ed47cefebdacc9cdd0ff72a2141a",
+    "modified": true
+  },
+  "engine/pipeline/intervention.py": {
+    "source_component": "pipeline/intervention.py",
+    "source_sha256": "4691ee4fe9af8d1e410b6ada0f053d2fe767407503c983376278369e48917198",
+    "packaged_sha256": "8a85f30c390e019bf57d8071754077ad097f74c4ad824ede8b12886e29b86f64",
+    "modified": true
+  },
+  "engine/pipeline/generation/run.py": {
+    "source_component": "pipeline/generation/run.py",
+    "source_sha256": "2366796e3eda6257271e4e04cecf6f38b2ebf1b345b86a1d0b8ad6897420a630",
+    "packaged_sha256": "2d21a70e84ebad7b89a1ecafb314a45ada32a0fd1a532e5ee4fd2d6750b7555d",
+    "modified": true
+  },
+  "engine/pipeline/generation/inference.py": {
+    "source_component": "pipeline/generation/inference.py",
+    "source_sha256": "591e793087067f33c7e7d1f76e10e04228f606db1326b3fa8f4dc65354ed58a5",
+    "packaged_sha256": "442044c83c35b8a8d25e17c5531833109ce854fa8a9612e189689fb2c7f0c776",
+    "modified": true
+  },
+  "scoring.py": {
+    "source_component": "pipeline/input_intervention_metrics.py",
+    "source_sha256": "f97290c56a1f69c0968a658bb304a5ca978031eed62944d334ef07ba7999f5cf",
+    "packaged_sha256": "f97290c56a1f69c0968a658bb304a5ca978031eed62944d334ef07ba7999f5cf",
+    "modified": false
+  },
+  "bounds.py": {
+    "source_component": "paper_eval/bounds.py",
+    "source_sha256": "d85dd950d49c4273cc755fe0cab238061fe236f75e9e3bb84ef80a3bc87e7feb",
+    "packaged_sha256": "495b0bf47af383dcf2238a18e3feb579232e70df2fa2485a1702168c16c873ce",
+    "modified": true
+  },
+  "lora_mapping.py": {
+    "source_component": "scripts/q35_lora_map_v2.py",
+    "source_sha256": "cb0172c0c638a6b5db444efc97dd0f95662c3fdd9f0e66b42e7704a2ecaa01e6",
+    "packaged_sha256": "a1f93b7fb0a310dc79a6a64387291ad39a10a5aae8e107a3991cb1267806ffd5",
+    "modified": true
+  },
+  "engine/pipeline/verification/deepscaler/__init__.py": {
+    "source_component": "pipeline/verification/deepscaler/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "packaged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modified": false
+  },
+  "engine/pipeline/verification/deepscaler/rewards/__init__.py": {
+    "source_component": "pipeline/verification/deepscaler/rewards/__init__.py",
+    "source_sha256": "ced614c4632940ecad45b76b8fa40e1f0645026caf1ab887d3005a7fea8c02b6",
+    "packaged_sha256": "ced614c4632940ecad45b76b8fa40e1f0645026caf1ab887d3005a7fea8c02b6",
+    "modified": false
+  },
+  "engine/pipeline/verification/deepscaler/rewards/math_reward.py": {
+    "source_component": "pipeline/verification/deepscaler/rewards/math_reward.py",
+    "source_sha256": "f6cbbcb40c4df08ee9eed7f2b25c1dc3eb04364f8c6e0082231f3c4e506a8377",
+    "packaged_sha256": "d1b56247eb48db618753727838485b18f708245a28a8d89a640131ac87a2ea54",
+    "modified": true
+  },
+  "engine/pipeline/verification/deepscaler/rewards/reward_types.py": {
+    "source_component": "pipeline/verification/deepscaler/rewards/reward_types.py",
+    "source_sha256": "55d14b4d26080a9c508c2492713e4c4375a30b7c4d696d52da84b9e3d215e155",
+    "packaged_sha256": "55d14b4d26080a9c508c2492713e4c4375a30b7c4d696d52da84b9e3d215e155",
+    "modified": false
+  },
+  "engine/pipeline/verification/deepscaler/rewards/math_utils/__init__.py": {
+    "source_component": "pipeline/verification/deepscaler/rewards/math_utils/__init__.py",
+    "source_sha256": "69720dd9ad6d0cfab06689f76ffec330b91f47a4bf639c1ae52af0adce184170",
+    "packaged_sha256": "69720dd9ad6d0cfab06689f76ffec330b91f47a4bf639c1ae52af0adce184170",
+    "modified": false
+  },
+  "engine/pipeline/verification/deepscaler/rewards/math_utils/utils.py": {
+    "source_component": "pipeline/verification/deepscaler/rewards/math_utils/utils.py",
+    "source_sha256": "a4496d7512c0dffd7da3085c95aae1b30769f528039ef172928f9c1e88946eb2",
+    "packaged_sha256": "a4496d7512c0dffd7da3085c95aae1b30769f528039ef172928f9c1e88946eb2",
+    "modified": false
+  },
+  "assets/datasets/cue_answer/health/health.json": {
+    "source_component": "datasets/cue_answer/health/health.json",
+    "source_sha256": "b9b8735bb8b4d2af40693f8c38449128e4de6ecc03d25e085773abc719552f4e",
+    "packaged_sha256": "b9b8735bb8b4d2af40693f8c38449128e4de6ecc03d25e085773abc719552f4e",
+    "modified": false
+  },
+  "assets/datasets/cue_answer/brute_logic/brute_logic.json": {
+    "source_component": "datasets/cue_answer/brute_logic/brute_logic.json",
+    "source_sha256": "8091b84ed7dcfc067e6fe7f2968b33430de84f24ea557461468c038edcc7d98c",
+    "packaged_sha256": "8091b84ed7dcfc067e6fe7f2968b33430de84f24ea557461468c038edcc7d98c",
+    "modified": false
+  },
+  "assets/datasets/cue_answer/brute_math/brute_math.json": {
+    "source_component": "datasets/cue_answer/brute_math/brute_math.json",
+    "source_sha256": "db1e64bed680785677c025cb6610f613511eb2009457964984f6d8d79800eee6",
+    "packaged_sha256": "db1e64bed680785677c025cb6610f613511eb2009457964984f6d8d79800eee6",
+    "modified": false
+  },
+  "assets/datasets/cue_condition/health/health.json": {
+    "source_component": "datasets/cue_condition/health/health.json",
+    "source_sha256": "b9b8735bb8b4d2af40693f8c38449128e4de6ecc03d25e085773abc719552f4e",
+    "packaged_sha256": "b9b8735bb8b4d2af40693f8c38449128e4de6ecc03d25e085773abc719552f4e",
+    "modified": false
+  },
+  "assets/datasets/cue_condition/Judgment/Judgment.json": {
+    "source_component": "datasets/cue_condition/Judgment/Judgment.json",
+    "source_sha256": "8f41e93bdafe0aa5cc553b44fa1a7b9710ecc7f618e7d1076ae6044c2f604a94",
+    "packaged_sha256": "8f41e93bdafe0aa5cc553b44fa1a7b9710ecc7f618e7d1076ae6044c2f604a94",
+    "modified": false
+  },
+  "assets/datasets/cue_condition/knowledge/knowledge.json": {
+    "source_component": "datasets/cue_condition/knowledge/knowledge.json",
+    "source_sha256": "34e58de54de36d8cef176d1b0459b3dc954b3713e1eb8ec5c380aa3a47de601e",
+    "packaged_sha256": "34e58de54de36d8cef176d1b0459b3dc954b3713e1eb8ec5c380aa3a47de601e",
+    "modified": false
+  },
+  "assets/datasets/cue_condition/preference/Preference.json": {
+    "source_component": "datasets/cue_condition/preference/Preference.json",
+    "source_sha256": "be2ccfce2c864f5a191157f2d66d4c3d6f6b919d40794dbf1053c3c41046a61b",
+    "packaged_sha256": "be2ccfce2c864f5a191157f2d66d4c3d6f6b919d40794dbf1053c3c41046a61b",
+    "modified": false
+  },
+  "assets/datasets/goal_deception/realworld/Deception.json": {
+    "source_component": "datasets/goal_deception/realworld/Deception.json",
+    "source_sha256": "8b03db3f6e9be417fbb80ebb171dd1765d3a4a4b229937d65b352de8c8f47d4c",
+    "packaged_sha256": "8b03db3f6e9be417fbb80ebb171dd1765d3a4a4b229937d65b352de8c8f47d4c",
+    "modified": false
+  },
+  "assets/datasets/goal_sandbag/mmlu_pro/MMLU_Pro.json": {
+    "source_component": "datasets/goal_sandbag/mmlu_pro/MMLU_Pro.json",
+    "source_sha256": "2f34301bbd16ca1b6bceba864dbba53fd372f26cc56337aa60500fde73f68f56",
+    "packaged_sha256": "2f34301bbd16ca1b6bceba864dbba53fd372f26cc56337aa60500fde73f68f56",
+    "modified": false
+  },
+  "assets/datasets/goal_sandbag/aime24/test.jsonl": {
+    "source_component": "datasets/goal_sandbag/aime24/test.jsonl",
+    "source_sha256": "16f87a954fa47871094ce09e0da56c4a2e3e15ed26c529ed6187a26e10d892dd",
+    "packaged_sha256": "16f87a954fa47871094ce09e0da56c4a2e3e15ed26c529ed6187a26e10d892dd",
+    "modified": false
+  },
+  "assets/datasets/goal_sandbag/wmdp/WMDP.json": {
+    "source_component": "datasets/goal_sandbag/wmdp/WMDP.json",
+    "source_sha256": "052e2e082c8c1872680fce44b2adb27307527df8fe24c25dd1d8d55f02b187e4",
+    "packaged_sha256": "052e2e082c8c1872680fce44b2adb27307527df8fe24c25dd1d8d55f02b187e4",
+    "modified": false
+  },
+  "assets/datasets/goal_sandbag/gpqa_diamond/test.jsonl": {
+    "source_component": "datasets/goal_sandbag/gpqa_diamond/test.jsonl",
+    "source_sha256": "6e0e53ce5684bc51cdd7038605f6f013b4c00eedc5ec82a4a34ce1c1007d4a22",
+    "packaged_sha256": "6e0e53ce5684bc51cdd7038605f6f013b4c00eedc5ec82a4a34ce1c1007d4a22",
+    "modified": false
+  },
+  "assets/prompts/llm_judge.yaml": {
+    "source_component": "prompts/llm_judge.yaml",
+    "source_sha256": "a3136c2e9f3395a63dece99835becf9ba585d3761cbb8a011e3bdd7915fb3725",
+    "packaged_sha256": "a3136c2e9f3395a63dece99835becf9ba585d3761cbb8a011e3bdd7915fb3725",
+    "modified": false
+  },
+  "assets/prompts/monitor_cue_answer.health.yaml": {
+    "source_component": "prompts/monitor_cue_answer.health.yaml",
+    "source_sha256": "7b72790ee395d4c31ec7ccb8cabd26f8700d55660140164edeef7dc17e92beca",
+    "packaged_sha256": "7b72790ee395d4c31ec7ccb8cabd26f8700d55660140164edeef7dc17e92beca",
+    "modified": false
+  },
+  "assets/prompts/monitor_cue_answer.logic.yaml": {
+    "source_component": "prompts/monitor_cue_answer.logic.yaml",
+    "source_sha256": "dcada6b60b360933a8905066aa38d47250779984e786a0841adc7bcf33f777ad",
+    "packaged_sha256": "dcada6b60b360933a8905066aa38d47250779984e786a0841adc7bcf33f777ad",
+    "modified": false
+  },
+  "assets/prompts/monitor_cue_answer.math.yaml": {
+    "source_component": "prompts/monitor_cue_answer.math.yaml",
+    "source_sha256": "dcada6b60b360933a8905066aa38d47250779984e786a0841adc7bcf33f777ad",
+    "packaged_sha256": "dcada6b60b360933a8905066aa38d47250779984e786a0841adc7bcf33f777ad",
+    "modified": false
+  },
+  "assets/prompts/monitor_cue_condition.health.yaml": {
+    "source_component": "prompts/monitor_cue_condition.health.yaml",
+    "source_sha256": "f10b4f118b5c6934a783681d3ab5f36722bec6a1215608aa9797d8cd3e984050",
+    "packaged_sha256": "f10b4f118b5c6934a783681d3ab5f36722bec6a1215608aa9797d8cd3e984050",
+    "modified": false
+  },
+  "assets/prompts/monitor_cue_condition.judgment.yaml": {
+    "source_component": "prompts/monitor_cue_condition.judgment.yaml",
+    "source_sha256": "e7d649cdefe152dc0ffd5fd2863ef455fa33cd74f73110205ac4c6a01c7f54e2",
+    "packaged_sha256": "e7d649cdefe152dc0ffd5fd2863ef455fa33cd74f73110205ac4c6a01c7f54e2",
+    "modified": false
+  },
+  "assets/prompts/monitor_cue_condition.knowledge.yaml": {
+    "source_component": "prompts/monitor_cue_condition.knowledge.yaml",
+    "source_sha256": "e7d649cdefe152dc0ffd5fd2863ef455fa33cd74f73110205ac4c6a01c7f54e2",
+    "packaged_sha256": "e7d649cdefe152dc0ffd5fd2863ef455fa33cd74f73110205ac4c6a01c7f54e2",
+    "modified": false
+  },
+  "assets/prompts/monitor_cue_condition.preference.yaml": {
+    "source_component": "prompts/monitor_cue_condition.preference.yaml",
+    "source_sha256": "e7d649cdefe152dc0ffd5fd2863ef455fa33cd74f73110205ac4c6a01c7f54e2",
+    "packaged_sha256": "e7d649cdefe152dc0ffd5fd2863ef455fa33cd74f73110205ac4c6a01c7f54e2",
+    "modified": false
+  },
+  "assets/prompts/monitor_goal_deception.realworld.yaml": {
+    "source_component": "prompts/monitor_goal_deception.realworld.yaml",
+    "source_sha256": "d10dd8ec02bb36d5f16546b314a0d4383872454fe543b80652cfb10e4b3df388",
+    "packaged_sha256": "d10dd8ec02bb36d5f16546b314a0d4383872454fe543b80652cfb10e4b3df388",
+    "modified": false
+  },
+  "assets/prompts/monitor_goal_sandbag.engineering.yaml": {
+    "source_component": "prompts/monitor_goal_sandbag.engineering.yaml",
+    "source_sha256": "c297aa9f77be7afb8bd48912f4b1e6052446eadb220ee20205ac4e1c575a12de",
+    "packaged_sha256": "c297aa9f77be7afb8bd48912f4b1e6052446eadb220ee20205ac4e1c575a12de",
+    "modified": false
+  },
+  "assets/prompts/monitor_goal_sandbag.math.yaml": {
+    "source_component": "prompts/monitor_goal_sandbag.math.yaml",
+    "source_sha256": "c297aa9f77be7afb8bd48912f4b1e6052446eadb220ee20205ac4e1c575a12de",
+    "packaged_sha256": "c297aa9f77be7afb8bd48912f4b1e6052446eadb220ee20205ac4e1c575a12de",
+    "modified": false
+  },
+  "assets/prompts/monitor_goal_sandbag.safety.yaml": {
+    "source_component": "prompts/monitor_goal_sandbag.safety.yaml",
+    "source_sha256": "c297aa9f77be7afb8bd48912f4b1e6052446eadb220ee20205ac4e1c575a12de",
+    "packaged_sha256": "c297aa9f77be7afb8bd48912f4b1e6052446eadb220ee20205ac4e1c575a12de",
+    "modified": false
+  },
+  "assets/prompts/monitor_goal_sandbag.science.yaml": {
+    "source_component": "prompts/monitor_goal_sandbag.science.yaml",
+    "source_sha256": "c297aa9f77be7afb8bd48912f4b1e6052446eadb220ee20205ac4e1c575a12de",
+    "packaged_sha256": "c297aa9f77be7afb8bd48912f4b1e6052446eadb220ee20205ac4e1c575a12de",
+    "modified": false
+  }
+}

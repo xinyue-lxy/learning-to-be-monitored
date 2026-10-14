@@ -1,0 +1,62 @@
+{
+  "cue_answer.health": {
+    "path": "datasets/cue_answer/health/health.json",
+    "sha256": "b9b8735bb8b4d2af40693f8c38449128e4de6ecc03d25e085773abc719552f4e",
+    "instances": 65
+  },
+  "cue_answer.logic": {
+    "path": "datasets/cue_answer/brute_logic/brute_logic.json",
+    "sha256": "8091b84ed7dcfc067e6fe7f2968b33430de84f24ea557461468c038edcc7d98c",
+    "instances": 50
+  },
+  "cue_answer.math": {
+    "path": "datasets/cue_answer/brute_math/brute_math.json",
+    "sha256": "db1e64bed680785677c025cb6610f613511eb2009457964984f6d8d79800eee6",
+    "instances": 28
+  },
+  "cue_condition.health": {
+    "path": "datasets/cue_condition/health/health.json",
+    "sha256": "b9b8735bb8b4d2af40693f8c38449128e4de6ecc03d25e085773abc719552f4e",
+    "instances": 65
+  },
+  "cue_condition.judgment": {
+    "path": "datasets/cue_condition/Judgment/Judgment.json",
+    "sha256": "8f41e93bdafe0aa5cc553b44fa1a7b9710ecc7f618e7d1076ae6044c2f604a94",
+    "instances": 100
+  },
+  "cue_condition.knowledge": {
+    "path": "datasets/cue_condition/knowledge/knowledge.json",
+    "sha256": "34e58de54de36d8cef176d1b0459b3dc954b3713e1eb8ec5c380aa3a47de601e",
+    "instances": 100
+  },
+  "cue_condition.preference": {
+    "path": "datasets/cue_condition/preference/Preference.json",
+    "sha256": "be2ccfce2c864f5a191157f2d66d4c3d6f6b919d40794dbf1053c3c41046a61b",
+    "instances": 108
+  },
+  "goal_deception.realworld": {
+    "path": "datasets/goal_deception/realworld/Deception.json",
+    "sha256": "8b03db3f6e9be417fbb80ebb171dd1765d3a4a4b229937d65b352de8c8f47d4c",
+    "instances": 50
+  },
+  "goal_sandbag.engineering": {
+    "path": "datasets/goal_sandbag/mmlu_pro/MMLU_Pro.json",
+    "sha256": "2f34301bbd16ca1b6bceba864dbba53fd372f26cc56337aa60500fde73f68f56",
+    "instances": 150
+  },
+  "goal_sandbag.math": {
+    "path": "datasets/goal_sandbag/aime24/test.jsonl",
+    "sha256": "16f87a954fa47871094ce09e0da56c4a2e3e15ed26c529ed6187a26e10d892dd",
+    "instances": 30
+  },
+  "goal_sandbag.safety": {
+    "path": "datasets/goal_sandbag/wmdp/WMDP.json",
+    "sha256": "052e2e082c8c1872680fce44b2adb27307527df8fe24c25dd1d8d55f02b187e4",
+    "instances": 120
+  },
+  "goal_sandbag.science": {
+    "path": "datasets/goal_sandbag/gpqa_diamond/test.jsonl",
+    "sha256": "6e0e53ce5684bc51cdd7038605f6f013b4c00eedc5ec82a4a34ce1c1007d4a22",
+    "instances": 198
+  }
+}

@@ -37,3 +37,24 @@ Upstream shell launchers embedded under `verl/experimental/` are omitted as well
 Packaging includes the OPSD agent-registration YAML. `setup.py` adds an optional SFT dependency group; package discovery includes all three method packages.
 
 SFT provides a standalone LoRA trainer with full-assistant token masks and trajectory-normalized cross-entropy. Its data paths, sequence limits, epoch schedule, and model-family selection are supplied at runtime; bundled experiment data and fixed run metadata are not required.
+
+## Component integration
+
+The supplied SFT Python implementation is included without modification.
+Standalone SFT requirements are listed separately from the verl environment.
+The original illustrative configuration is retained, including its LoRA rank;
+it is not relabeled as an evaluation-compatible experiment configuration.
+
+`evaluation/` is an independent package containing MonitorBench tasks, frozen
+target-outcome and CoT-only monitor policies, lower and upper causal-recall
+bounds, and native/pairwise-common/trajectory-common analysis. Its executable
+sources, profiles, prompts and data are unchanged by integration. Model weights,
+experiment results and checkpoint publication instructions are not included.
+
+Root package discovery is restricted to `verl` and `methods`; evaluation has its
+own installation and runtime dependencies. A narrowly scoped ignore exception
+retains evaluation dataset JSONL assets without exposing generated JSONL outputs.
+No additional changes are made to the RL/OPSD framework or method sources.
+
+Packaging no longer declares an undefined dynamic author field, and explicitly
+includes both the Apache license and original notice in the training wheel.

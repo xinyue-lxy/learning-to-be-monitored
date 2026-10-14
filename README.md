@@ -1,6 +1,7 @@
 # Learning to Be Monitored: Self-Distillation and Reinforcement Learning for Chain-of-Thought Monitorability
 
-Three post-training methods for improving chain-of-thought monitorability:
+This repository contains three post-training methods and an intervention-based
+evaluation framework for chain-of-thought monitorability:
 
 - **SFT:** learn from fixed, curated offline self-teacher responses, supervising
   both reasoning and final answers with trajectory-normalized cross-entropy.
@@ -11,6 +12,18 @@ Three post-training methods for improving chain-of-thought monitorability:
 
 RL and OPSD use **verl**. SFT provides a standalone single-GPU LoRA trainer
 alongside them. Each method has one illustrative configuration under `examples/`.
+The independent `evaluation/` package provides MonitorBench tasks, CoT-only
+monitoring, and lower and upper causal-recall bound estimators, with native and
+common support analysis. Training data, checkpoints, evaluation seeds and output
+locations are supplied by the user. Model weights and experiment results are
+not included.
+
+| Component | Location | Runtime |
+|---|---|---|
+| Offline self-distillation SFT | `methods/sft/` | Single-GPU PyTorch/PEFT |
+| Reinforcement learning | `methods/rl/`, `verl/` | Distributed verl |
+| Online privileged self-distillation | `methods/opsd/`, `verl/` | Distributed verl |
+| Monitorability evaluation | `evaluation/` | Separate analysis/inference package |
 
 This is a derivative of [verl-project/verl](https://github.com/verl-project/verl),
 not an independent implementation of its distributed training framework.
@@ -19,13 +32,17 @@ and [CHANGES.md](CHANGES.md) for the integration changes.
 
 ## Installation
 
-Use Python 3.12 and a compatible CUDA/PyTorch/vLLM environment. The inherited
-package metadata specifies framework dependencies; choose accelerator libraries
-for the machine on which training will run.
+Use separate environments for RL/OPSD, standalone SFT and evaluation. Their
+inference and numerical-library requirements are not interchangeable. The root
+package installs verl and the method modules; it does not install evaluation.
+
+For RL/OPSD, use Python 3.12 and a compatible CUDA/PyTorch/vLLM environment.
+The inherited package metadata specifies framework dependencies; choose
+accelerator libraries for the machine on which training will run.
 
 ```bash
-uv venv --python 3.12
-source .venv/bin/activate
+uv venv --python 3.12 .venv-verl
+source .venv-verl/bin/activate
 uv pip install -e .
 ```
 
@@ -56,7 +73,9 @@ or curating targets. The trainer accepts these offline targets; teacher generati
 and curation are performed separately.
 
 ```bash
-uv pip install -e '.[sft]'
+uv venv --python 3.12 .venv-sft
+uv pip install --python .venv-sft/bin/python -r requirements-sft.txt
+source .venv-sft/bin/activate
 python -m methods.sft.train --config examples/sft.yaml \
   --model-path /path/to/initial/model \
   --train-file data/sft/train.jsonl \
@@ -73,6 +92,14 @@ trajectories and then across trajectories, with no KL term. Batch counts and the
 cosine schedule are derived from the supplied data. Set the sequence limit to
 fit complete targets; responses are not truncated. The trainer saves adapters
 and tokenizers after each epoch. `--validation-file` is optional.
+
+The standalone command runs from this checkout and does not require installing
+verl. The illustrative SFT configuration uses rank 8; the frozen evaluation
+loading profiles currently require rank 32. The trainer and evaluator also have
+different checkpoint-manifest requirements. See
+[COMPONENTS.md](docs/COMPONENTS.md) before attempting to evaluate a training
+output. Neither the SFT implementation nor the evaluator's loading contract is
+changed to bridge these differences.
 
 ## RL example
 
@@ -153,3 +180,44 @@ values are masked, with conservative downweighting when parsing is ambiguous.
 `methods/opsd/agent_loop.yaml` is the agent registration resource used by the
 single OPSD example, not an additional experiment configuration.
 
+## Evaluation
+
+The evaluation framework includes twelve MonitorBench tasks and fixed profiles
+for Qwen3.5-4B, Qwen3.5-9B and Mistral Small 3.2 24B task models, with Qwen3-32B,
+Llama 3.3 70B and GPT-OSS-120B monitors. The target-outcome verifier reads only
+the final response; the monitor reads CoT and task/intervention context, not the
+separately parsed final response. Evaluation X/Y/Z labels are distinct from
+training data-selection labels.
+
+Install it in its own environment, from the repository root:
+
+```bash
+uv venv --python 3.12 .venv-eval
+uv pip install --python .venv-eval/bin/python -e evaluation
+source .venv-eval/bin/activate
+python -m monitorability_eval inspect
+```
+
+Planning and numerical analysis require only the standard library. For GPU
+inference, install `evaluation[runtime]` in that environment and follow the
+[runtime requirements](evaluation/docs/RUNTIME.md). The migrated GPU workflow
+still requires an end-to-end canary; CPU tests do not establish GPU acceptance.
+
+The [evaluation README](evaluation/README.md) describes task generation,
+corrected-Y verification, monitor replay and analysis. Use `--support native`,
+`--support common` or `--support trajectory_common` with the same analysis
+command. Sampling seeds are explicit user inputs rather than experiment-specific
+registrations. Both recall endpoints, intervention-arm specificity and their
+instance-first composites are retained; valid zeros are included and NA values
+are excluded from the task-macro denominator. See
+[METRICS.md](evaluation/docs/METRICS.md) for the estimators and eligibility gates.
+
+## Licensing and provenance
+
+The training framework and method implementations are distributed under
+Apache-2.0; see [LICENSE](LICENSE), [Notice.txt](Notice.txt) and
+[UPSTREAM.md](UPSTREAM.md). The evaluation component retains MonitorBench's MIT
+notice in [LICENSE.upstream](evaluation/LICENSE.upstream) and its provenance in
+[NOTICE.md](evaluation/NOTICE.md). Dataset and model redistribution terms apply
+separately. Bundled evaluation data are identified in
+[DATASETS.md](evaluation/docs/DATASETS.md).

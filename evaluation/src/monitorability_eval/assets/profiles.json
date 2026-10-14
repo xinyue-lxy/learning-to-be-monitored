@@ -1,0 +1,169 @@
+{
+  "task_models": {
+    "qwen35_4b": {
+      "backend": "vllm",
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "gpu_memory_utilization": 0.9,
+      "language_model_only": true,
+      "max_model_len": 32768,
+      "max_tokens": 32768,
+      "model_name": "Qwen/Qwen3.5-4B",
+      "output_format": "explicit_reasoning_answer",
+      "reasoning_effort": "high",
+      "revision": "c7429d5a8ed57f4a9cfdaf1af76a8943eba0ae97",
+      "rollout_number": 8,
+      "rope_scaling": null,
+      "temperature": 0.6,
+      "tensor_parallel": 1,
+      "top_p": 0.9
+    },
+    "qwen35_9b": {
+      "backend": "vllm",
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "gpu_memory_utilization": 0.9,
+      "language_model_only": true,
+      "max_model_len": 32768,
+      "max_tokens": 32768,
+      "model_name": "Qwen/Qwen3.5-9B",
+      "output_format": "explicit_reasoning_answer",
+      "reasoning_effort": "high",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "rollout_number": 8,
+      "rope_scaling": null,
+      "temperature": 0.6,
+      "tensor_parallel": 1,
+      "top_p": 0.9
+    },
+    "mistral_small32_24b": {
+      "backend": "vllm",
+      "chat_template_kwargs": {},
+      "gpu_memory_utilization": 0.9,
+      "language_model_only": true,
+      "max_model_len": 32768,
+      "max_tokens": 32768,
+      "model_name": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "output_format": "explicit_reasoning_answer",
+      "reasoning_effort": "high",
+      "revision": "95a6d26c4bfb886c58daf9d3f7332c857cb27b43",
+      "rollout_number": 8,
+      "rope_scaling": null,
+      "temperature": 0.6,
+      "tensor_parallel": 1,
+      "top_p": 0.9
+    }
+  },
+  "monitors": {
+    "qwen3_32b": {
+      "backend": "vllm",
+      "chat_template_kwargs": {},
+      "concise_verdict": false,
+      "drop_invalid_verdicts": true,
+      "forced_final_choice": false,
+      "forced_final_choice_mode": "direct",
+      "forced_final_choices": "ABC",
+      "gpu_memory_utilization": 0.9,
+      "language_model_only": false,
+      "max_model_len": 32768,
+      "max_tokens": 16768,
+      "model_name": "Qwen/Qwen3-32B",
+      "output_format": "auto",
+      "reasoning_effort": "high",
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+      "rollout_number": 4,
+      "rope_scaling": {
+        "factor": 2,
+        "original_max_position_embeddings": 32768,
+        "rope_type": "yarn"
+      },
+      "temperature": 0.6,
+      "tensor_parallel": 1,
+      "top_p": 0.9
+    },
+    "gptoss_120b": {
+      "backend": "vllm",
+      "chat_template_kwargs": {},
+      "concise_verdict": false,
+      "drop_invalid_verdicts": true,
+      "forced_final_choice": false,
+      "forced_final_choice_mode": "direct",
+      "forced_final_choices": "ABC",
+      "gpu_memory_utilization": 0.9,
+      "language_model_only": false,
+      "max_model_len": 32768,
+      "max_tokens": 16768,
+      "model_name": "openai/gpt-oss-120b",
+      "output_format": "auto",
+      "reasoning_effort": "high",
+      "revision": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+      "rollout_number": 4,
+      "rope_scaling": {
+        "factor": 2,
+        "original_max_position_embeddings": 32768,
+        "rope_type": "yarn"
+      },
+      "temperature": 0.6,
+      "tensor_parallel": 2,
+      "top_p": 0.9
+    },
+    "llama33_70b": {
+      "backend": "llama_single_query",
+      "model_name": "meta-llama/Llama-3.3-70B-Instruct",
+      "revision": "6f6073b423013f6a7d4d9f39144961bfbfbc386b",
+      "temperature": 0.6,
+      "top_p": 0.9,
+      "max_tokens": 16768,
+      "max_model_len": 65536,
+      "rollout_number": 4,
+      "tensor_parallel": 1,
+      "rope_scaling": null,
+      "output_format": "auto",
+      "chat_template_kwargs": {},
+      "gpu_memory_utilization": 0.9,
+      "concise_verdict": false,
+      "forced_final_choice": false,
+      "drop_invalid_verdicts": true,
+      "serving": {
+        "tensor_parallel_size": 1,
+        "gpu_memory_utilization": 0.9,
+        "max_num_seqs": 1,
+        "max_num_batched_tokens": 2048,
+        "enable_chunked_prefill": true,
+        "enforce_eager": true,
+        "generation_config": "auto",
+        "prompt_batch_size": 1
+      }
+    }
+  },
+  "verifier": {
+    "backend": "vllm",
+    "chat_template_kwargs": {},
+    "gpu_memory_utilization": 0.9,
+    "language_model_only": false,
+    "max_model_len": 32768,
+    "max_tokens": 4096,
+    "model_name": "Qwen/Qwen3-32B",
+    "output_format": "auto",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "rollout_number": 1,
+    "rope_scaling": {
+      "factor": 2,
+      "original_max_position_embeddings": 32768,
+      "rope_type": "yarn"
+    },
+    "temperature": 0.6,
+    "tensor_parallel": 1,
+    "top_p": 0.9
+  },
+  "runtime_versions": {
+    "numpy": "2.3.5",
+    "openai-harmony": "0.0.8",
+    "pylatexenc": "2.10",
+    "torch": "2.11.0",
+    "transformers": "5.12.1",
+    "vllm": "0.23.0"
+  }
+}

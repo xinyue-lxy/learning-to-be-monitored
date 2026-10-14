@@ -1,0 +1,7 @@
+# Standalone SFT runtime; use a separate Python 3.12 environment.
+# These component pins are not a fully resolved dependency lock.
+torch==2.11.0
+transformers==5.12.1
+peft==0.19.1
+mistral-common==1.11.3
+PyYAML>=6.0

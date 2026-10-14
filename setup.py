@@ -84,7 +84,7 @@ setup(
     name="verl",
     version=__version__,
     package_dir={"": "."},
-    packages=find_packages(where="."),
+    packages=find_packages(where=".", include=["verl", "verl.*", "methods", "methods.*"]),
     url="https://github.com/verl-project/verl",
     license="Apache 2.0",
     description="verl: Volcano Engine Reinforcement Learning for LLM",

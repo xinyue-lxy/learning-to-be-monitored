@@ -1,6 +1,9 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-*/
+.DS_Store
+__MACOSX/
 .env
 .env.*
 !.env.example
@@ -18,6 +21,7 @@ data/
 *.pth
 *.ckpt
 *.jsonl
+!/evaluation/src/monitorability_eval/assets/datasets/**/*.jsonl
 *.log
 *.egg-info/
 build/
