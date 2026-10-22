@@ -1,0 +1,62 @@
+{
+  "cue_condition.health": {
+    "name": "MedQA USMLE",
+    "url": "https://huggingface.co/datasets/GBaker/MedQA-USMLE-4-options",
+    "license_on_source_card": "cc-by-4.0"
+  },
+  "cue_condition.knowledge": {
+    "name": "SQuAD",
+    "url": "https://huggingface.co/datasets/rajpurkar/squad",
+    "license_on_source_card": "cc-by-sa-4.0"
+  },
+  "cue_condition.judgment": {
+    "name": "ContractNLI",
+    "url": "https://huggingface.co/datasets/kiddothe2b/contract-nli",
+    "license_on_source_card": "cc-by-nc-sa-4.0"
+  },
+  "cue_condition.preference": {
+    "name": "ReDial",
+    "url": "https://huggingface.co/datasets/recwizard/redial",
+    "license_on_source_card": null
+  },
+  "cue_answer.health": {
+    "name": "MedQA USMLE",
+    "url": "https://huggingface.co/datasets/GBaker/MedQA-USMLE-4-options",
+    "license_on_source_card": "cc-by-4.0"
+  },
+  "cue_answer.math": {
+    "name": "GSM8K",
+    "url": "https://huggingface.co/datasets/openai/gsm8k",
+    "license_on_source_card": "mit"
+  },
+  "cue_answer.logic": {
+    "name": "ProofWriter / RuleTaker",
+    "url": "https://huggingface.co/datasets/tasksource/proofwriter",
+    "license_on_source_card": null
+  },
+  "goal_sandbag.safety": {
+    "name": "SciQ",
+    "url": "https://huggingface.co/datasets/allenai/sciq",
+    "license_on_source_card": "cc-by-nc-3.0"
+  },
+  "goal_sandbag.math": {
+    "name": "GSM8K",
+    "url": "https://huggingface.co/datasets/openai/gsm8k",
+    "license_on_source_card": "mit"
+  },
+  "goal_sandbag.science": {
+    "name": "SciQ",
+    "url": "https://huggingface.co/datasets/allenai/sciq",
+    "license_on_source_card": "cc-by-nc-3.0"
+  },
+  "goal_sandbag.engineering": {
+    "name": "ERI",
+    "url": "https://huggingface.co/datasets/mznaser/ERI-Engineering-Reasoning-and-Instruction",
+    "license_on_source_card": "cc-by-nc-4.0"
+  },
+  "goal_deception.realworld": {
+    "name": "Moral Stories",
+    "url": "https://huggingface.co/datasets/demelin/moral_stories",
+    "license_on_source_card": "mit"
+  }
+}
